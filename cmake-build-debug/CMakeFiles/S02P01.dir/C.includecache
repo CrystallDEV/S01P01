@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marek.hasselder/CLionProjects/S02P01/main.c
+time.h
+-
+malloc.h
+-
+priorityqueue.h
+C:/Users/marek.hasselder/CLionProjects/S02P01/priorityqueue.h
+
+C:/Users/marek.hasselder/CLionProjects/S02P01/priorityqueue.h
+stdio.h
+-
+malloc.h
+-
+
