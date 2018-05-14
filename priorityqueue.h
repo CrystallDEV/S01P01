@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <malloc.h>
+
 /*
  * Created by marek.hasselder on 04/27/2018
  */
@@ -108,18 +109,23 @@ char *pqueue_extractMin(struct priorityqueue_t *pq) {
         logError("No entries found.\n");
         return NULL;
     }
+
     struct pqentry_t *currentEntry = pq->first;
-    pq->first = currentEntry->next_entry;
     char *val = currentEntry->value;
 
     if (pq->entries == 1) {
         pq->first = NULL;
         pq->last = NULL;
+        pq->entries = 0;
+    } else {
+        pq->first = currentEntry->next_entry;
+        pq->entries--;
     }
+
+
     //Debugging values
 //    float priority = currentEntry->priority;
 //    printf("Value: %d Priority: %f\n", val, priority);
-    pqueue_remove(pq, val);
     return val;
 }
 
